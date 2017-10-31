@@ -1,0 +1,12 @@
+# temporary
+*.o
+*#
+*~
+.*
+# binary
+a.out
+
+# file // folder
+test
+fileTransfert
+.clang_complete

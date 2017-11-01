@@ -17,21 +17,21 @@ recoie des commandes et les executent.
 
 
 .config:
-home: reference le /
-data: dossier avec tout les fichiers // pas de sous dossier
-references: dossier avec infos sur les fichiers stockés // peut comprendre des sous-dossiers
+home:		reference le /
+data:		dossier avec tout les fichiers // pas de sous dossier
+references:	dossier avec infos sur les fichiers stockés // peut comprendre des sous-dossiers
 
 
-.env:	fichier avec des vars
-nb file: nombre de fichiers stockés
-taille:  taille total d'octets stockés
+.env:		fichier avec des vars
+nb file:	nombre de fichiers stockés
+taille:		taille total d'octets stockés
 ip:
 
 
 exemple fichier reference:
-	-	nom: 		nom du ficher
-	-	type: 		type du fichier nom de l'extension (ex: mp4, wav, png, ...)
-	-	taille: 	taille en octets
+	-	nom:		nom du ficher
+	-	type:		type du fichier nom de l'extension (ex: mp4, wav, png, ...)
+	-	taille:		taille en octets
 	-	path:		lien du fichier dans le dossier data
 	-	description:	blablabla...
 

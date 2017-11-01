@@ -1,5 +1,5 @@
 ##
-## Makefile for mouliPushswap in /home/alexandre/Documents/tek1/mouliPushswap
+## Makefile for Client in /home/alexandre/Documents/tek1/mouliPushswap
 ##
 ## Made by alexandre Chamard-bois
 ## Login   <alexandre@epitech.net>

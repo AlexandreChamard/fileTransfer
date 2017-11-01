@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:21:12 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 19:38:30 2017 Guilhem
+** Last update Wed Nov 01 20:41:58 2017 Guilhem
 */
 
 #ifndef SERVER_RESEAU_H_
@@ -21,7 +21,6 @@ typedef struct                  s_reseau_info {
         socklen_t               addrlen;
         int                     port;
         int                     fd;
-        int                     sockfd;
 }                               reseau_info_t;
 
 /* Declarations of functions */
@@ -33,6 +32,6 @@ void    close_server(reseau_info_t *info);
 
         /* Requests specific */
 
-void    handle_request(reseau_info_t *info);
+void    handle_request(reseau_info_t *info, char *buff);
 
 #endif

@@ -19,6 +19,7 @@ SRC		=	src/main.c		\
 			src/init/init.c		\
 			src/init/parse_args.c	\
 			src/reseau/launch.c	\
+			src/reseau/requests.c
 
 SRC		+=	src/lib/trim.c		\
 

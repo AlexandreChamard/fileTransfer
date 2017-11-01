@@ -5,7 +5,7 @@
 ** Login   <guilhem@epitech.net>
 **
 ** Started on  Wed Nov 01 18:11:12 2017 Guilhem
-** Last update Wed Nov 01 18:51:17 2017 Guilhem
+** Last update Wed Nov 01 20:36:22 2017 Guilhem
 */
 
 #include <unistd.h>
@@ -27,7 +27,7 @@ void            parse_args(server_config_t *config, int ac, char **av)
         int     opt;
 
         config->reseau.port = DEFAULT_PORT;
-        while ((opt = getopt(ac, av, "p:")) != STD_F) {
+        while ((opt = getopt(ac, av, "p:")) != STD_ERR) {
                 switch(opt) {
                         case 'p':
                                 config->reseau.port = atoi(optarg);

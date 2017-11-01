@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:17:13 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 18:18:55 2017 Guilhem
+** Last update Wed Nov 01 19:40:15 2017 Guilhem
 */
 
 #ifndef SERVER_MACRO_H_
@@ -23,6 +23,14 @@
 # define STD_F          -1
 #endif
 
+#ifndef TRUE
+# define TRUE           1
+#endif
+
+#ifndef FALSE
+# define FALSE          0
+#endif
+
 #ifndef TRY
 # define TRY(x, y)      (x == y ? perror(NULL), exit(EXIT_F) : 0)
 #endif
@@ -37,6 +45,10 @@
 
 #ifndef TIMEOUT
 # define TIMEOUT        -1         // timeout for server, -1 for disabling it
+#endif
+
+#ifndef MAX_CLIENTS
+# define MAX_CLIENTS    64
 #endif
 
 

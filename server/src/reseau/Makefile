@@ -11,10 +11,10 @@
 CC		=	gcc
 
 CFLAGS		=	-W -Wall -Wextra -Werror
-CFLAGS		+=	-I./include
+CFLAGS		+=	-I../../include
 
-SRC		=	src/main.c		\
-			src/server.c
+SRC		=	main.c		\
+			server.c
 
 OBJ		=	$(SRC:.c=.o)
 

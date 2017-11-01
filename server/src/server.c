@@ -1,5 +1,5 @@
 /*
-** main.c for Server in /home/alexandre/Documents/git/fileTransfert/server/src
+** server.c for Server in /home/alexandre/Documents/git/fileTransfert/server/src
 **
 ** Made by alexandre Chamard-bois
 ** Login   <alexandre@epitech.net>
@@ -18,13 +18,12 @@
 
 #include "info.h"
 
-int                     main(int ac, char **av)
+void    launch_server(t_server_info *info)
 {
-        t_server_info   info;
-	(void)ac;
-	(void)av;
-	printf("server\n");
-        launch_server(&info);
-        close_server(&info);
-	return (EXIT_S);
+        TRY((info->fd = socket(AF_INET, SOCK_STREAM, 0)), STD_F);
+}
+
+void    close_server(t_server_info *info)
+{
+        close(info->fd);
 }

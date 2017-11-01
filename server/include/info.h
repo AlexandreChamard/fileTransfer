@@ -49,3 +49,8 @@ typedef struct                  s_server_info {
         int                     msg_len;
         char                    msg_buff[BUFF_SIZE];
 }                               t_server_info;
+
+/* Declarations of functions */
+
+void    launch_server(t_server_info *info);
+void    close_server(t_server_info *info);

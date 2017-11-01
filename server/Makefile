@@ -14,6 +14,7 @@ CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	-I./include
 
 SRC		=	src/main.c		\
+			src/server.c
 
 OBJ		=	$(SRC:.c=.o)
 

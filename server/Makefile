@@ -17,7 +17,7 @@ SRC		=	src/main.c		\
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME		=	fileTransfert
+NAME		=	fileTransfer
 
 all		:	$(NAME)
 

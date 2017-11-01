@@ -15,7 +15,9 @@ CFLAGS		+=	-I./include
 
 SRC		=	src/main.c		\
 			src/file/config/open.c	\
+			src/file/config/print.c	\
 			src/init/init.c		\
+			src/reseau/launch.c	\
 
 SRC		+=	src/lib/trim.c		\
 

@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:21:12 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 20:41:58 2017 Guilhem
+** Last update Wed Nov 01 20:44:28 2017 Guilhem
 */
 
 #ifndef SERVER_RESEAU_H_
@@ -15,6 +15,8 @@
 #include <arpa/inet.h>
 
 #include "macro.h"
+
+/* Declarations of structures */
 
 typedef struct                  s_reseau_info {
         struct sockaddr_in      addr;

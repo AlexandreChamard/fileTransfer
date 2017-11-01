@@ -5,7 +5,7 @@
 ** Login   <guilhem@epitech.net>
 **
 ** Started on  Wed Nov 01 19:44:56 2017 Guilhem
-** Last update Wed Nov 01 20:41:53 2017 Guilhem
+** Last update Wed Nov 01 20:52:06 2017 Guilhem
 */
 
 #include <stdio.h>
@@ -16,5 +16,5 @@
 void handle_request(reseau_info_t *info, char *buff)
 {
         (void)info;
-        printf("%s\n", buff);
+        printf("%s", buff);
 }

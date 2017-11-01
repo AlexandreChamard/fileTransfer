@@ -5,9 +5,10 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 14:52:24 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 15:49:44 2017 alexandre Chamard-bois
+** Last update Wed Nov 01 16:50:51 2017 alexandre Chamard-bois
 */
 
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include "config.h"
@@ -20,7 +21,9 @@ void print_config(server_config_t *config)
 	printf("data: %s\n", config->data);
 }
 
-int main(int ac, char **av)
+#include "info.h"
+
+int                     main(int ac, char **av)
 {
 	server_config_t config = {"", "", "", 0};
 

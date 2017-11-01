@@ -14,6 +14,10 @@ CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	-I./include
 
 SRC		=	src/main.c		\
+			src/file/config/open.c	\
+			src/init/init.c		\
+
+SRC		+=	src/lib/trim.c		\
 
 OBJ		=	$(SRC:.c=.o)
 

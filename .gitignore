@@ -11,3 +11,5 @@ a.out
 test
 fileTransfert
 .clang_complete
+.config
+.env

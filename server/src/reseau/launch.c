@@ -5,16 +5,12 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 14:52:24 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 17:36:38 2017 alexandre Chamard-bois
+** Last update Wed Nov 01 18:43:34 2017 Guilhem
 */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 
 #include "reseau.h"
 

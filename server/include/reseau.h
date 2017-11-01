@@ -19,10 +19,9 @@
 typedef struct                  s_reseau_info {
         struct sockaddr_in      addr;
         socklen_t               addrlen;
+        int                     port;
         int                     fd;
         int                     sockfd;
-        int                     msg_len;
-        char                    msg_buff[BUFF_SIZE];
 }                               reseau_info_t;
 
 /* Declarations of functions */

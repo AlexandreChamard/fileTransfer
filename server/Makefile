@@ -17,6 +17,7 @@ SRC		=	src/main.c		\
 			src/file/config/open.c	\
 			src/file/config/print.c	\
 			src/init/init.c		\
+			src/init/parse_args.c	\
 			src/reseau/launch.c	\
 
 SRC		+=	src/lib/trim.c		\

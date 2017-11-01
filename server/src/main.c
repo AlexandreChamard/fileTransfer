@@ -5,11 +5,9 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 14:52:24 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 17:32:28 2017 alexandre Chamard-bois
+** Last update Wed Nov 01 18:46:16 2017 Guilhem
 */
 
-#include <unistd.h>
-#include <stdio.h>
 #include <string.h>
 
 #include "config.h"
@@ -20,6 +18,7 @@ int                     main(int ac, char **av)
 	server_config_t config;
 
 	memset(&config, 0, sizeof(server_config_t));
+	parse_args(&config, ac, av);
 	launch_server(&config.reseau);
 	if (ac == 2 && !strcmp(av[1], "init")) {
 		init_server(&config);

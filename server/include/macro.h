@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:17:13 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 17:18:33 2017 alexandre Chamard-bois
+** Last update Wed Nov 01 18:18:55 2017 Guilhem
 */
 
 #ifndef SERVER_MACRO_H_

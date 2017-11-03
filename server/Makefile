@@ -25,7 +25,7 @@ SRC		+=	src/lib/trim.c		\
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME		=	fileTransfer
+NAME		=	serverFT
 
 all		:	$(NAME)
 

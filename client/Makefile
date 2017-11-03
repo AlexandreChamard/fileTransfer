@@ -14,10 +14,11 @@ CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	-I./include
 
 SRC		=	src/main.c		\
+			src/reseau/launch.c
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME		=	fileTransfert
+NAME		=	clientFT
 
 all		:	$(NAME)
 

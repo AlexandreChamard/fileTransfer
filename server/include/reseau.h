@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:21:12 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 20:44:28 2017 Guilhem
+** Last update Sat Nov 04 17:28:23 2017 Guilhem
 */
 
 #ifndef SERVER_RESEAU_H_
@@ -20,7 +20,6 @@
 
 typedef struct                  s_reseau_info {
         struct sockaddr_in      addr;
-        socklen_t               addrlen;
         int                     port;
         int                     fd;
 }                               reseau_info_t;

@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 15:19:09 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 19:25:02 2017 alexandre Chamard-bois
+** Last update Tue Nov 07 00:05:50 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
@@ -17,13 +17,13 @@
 #include "config.h"
 
 static const pars_info_t g_infos[] = {
-	{"Home (default: pwd):", NULL, NULL},
-	{"references (default: Home/references):", NULL, NULL},
-	{"data (default: Home/data):", NULL, NULL},
-	{"Size (default: 1024Ko)", NULL, NULL},
+	{"Home (default: pwd):", valid_home, set_default_home},
+	{"references (default: Home/references):", valid_references, set_default_references},
+	{"data (default: Home/data):", valid_data, set_default_data},
+	{"Size (default: 1024Ko):", valid_size, set_default_size},
 };
 
-int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t set_default)
+static int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t set_default)
 {
 	size_t 		buff_size = FILENAME_MAX;
 	int 		valid = 0;
@@ -31,6 +31,7 @@ int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t
 	size_t 		readed = buff_size + 1;
 
 	if (!(buffer = malloc((buff_size + 1) * sizeof(char)))) {
+		perror(NULL);
 		exit(1);
 	}
 	while (!valid) {
@@ -42,7 +43,7 @@ int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t
 			valid = 0;
 		}
 	}
-	if (!*buffer) {
+	if (*buffer == '\n') {
 		set_default(data);
 	}
 	free(buffer);

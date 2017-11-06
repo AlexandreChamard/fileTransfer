@@ -19,6 +19,11 @@ SRC		=	src/main.c		\
 			src/init/init.c		\
 			src/reseau/launch.c	\
 
+SRC		+=	src/init/home.c		\
+			src/init/data.c		\
+			src/init/references.c	\
+			src/init/size.c		\
+
 SRC		+=	src/lib/trim.c		\
 
 OBJ		=	$(SRC:.c=.o)

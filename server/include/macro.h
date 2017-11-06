@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:17:13 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 19:08:00 2017 alexandre Chamard-bois
+** Last update Mon Nov 06 12:51:31 2017 alexandre Chamard-bois
 */
 
 #ifndef SERVER_MACRO_H_
@@ -40,7 +40,7 @@
 # endif
 
 # ifndef FILENAME_MAX
-#  define FILENAME_MAX	255
+#  define FILENAME_MAX	256
 # endif
 
 # ifndef PATH_MAX

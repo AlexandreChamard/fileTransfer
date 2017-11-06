@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 15:47:04 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 18:51:30 2017 alexandre Chamard-bois
+** Last update Sun Nov 05 11:48:25 2017 alexandre Chamard-bois
 */
 
 #ifndef SERVER_INIT_H_
@@ -22,6 +22,18 @@ enum g_info {
 
 typedef int (*func_valid_t)(void *data, char *buff, size_t size);
 typedef int (*func_default_val_t)(void *data);
+
+int valid_home(void *data, char *buff, size_t size);
+int set_default_home(void *data);
+
+int valid_data(void *data, char *buff, size_t size);
+int set_default_data(void *data);
+
+int valid_references(void *data, char *buff, size_t size);
+int set_default_references(void *data);
+
+int valid_size(void *data, char *buff, size_t size);
+int set_default_size(void *data);
 
 typedef struct	pars_info {
 	char			*prompt;

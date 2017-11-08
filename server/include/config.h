@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 14:55:26 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 17:29:31 2017 alexandre Chamard-bois
+** Last update Wed Nov 01 18:44:46 2017 Guilhem
 */
 
 #ifndef SERVER_CONFIG_H_
@@ -24,7 +24,8 @@ typedef struct server_config {
 	long	max_space; // Ko
 }	server_config_t;
 
-int open_config_file(server_config_t *config);
-void print_config(server_config_t *config);
+int 	open_config_file(server_config_t *config);
+void 	print_config(server_config_t *config);
+void 	parse_args(server_config_t *config, int ac, char **av);
 
 #endif

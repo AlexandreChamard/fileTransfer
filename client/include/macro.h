@@ -1,15 +1,16 @@
 /*
-** macro.h for Server in /home/alexandre/Documents/git/fileTransfert/server/include
+** macro.h for fileTransfer in /home/guilhem/C/fileTransfer/client/include
 **
-** Made by alexandre Chamard-bois
-** Login   <alexandre@epitech.net>
+** Made by Guilhem
+** Login   <guilhem@epitech.net>
 **
-** Started on  Wed Nov 01 17:17:13 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 20:36:39 2017 Guilhem
+** Started on  Fri Nov 03 13:44:55 2017 Guilhem
+** Last update Fri Nov 03 14:22:12 2017 Guilhem
 */
 
-#ifndef SERVER_MACRO_H_
-# define SERVER_MACRO_H_
+
+#ifndef CLIENT_MACRO_H_
+# define CLIENT_MACRO_H_
 
 #ifndef EXIT_S
 # define EXIT_S         0
@@ -43,6 +44,11 @@
 # define TRY(func, err, ...)    (func == err ? HANDLE(__VA_ARGS__) : 0)
 #endif
 
+// Address loopback on DEFAULT_PORT
+#ifndef DEFAULT_ADDR
+# define DEFAULT_ADDR   "127.0.0.1"
+#endif
+
 // Should only use port number >=1024, others may be in use
 #ifndef DEFAULT_PORT
 # define DEFAULT_PORT   1234
@@ -56,10 +62,6 @@
 // timeout for server, -1 for disabling it
 #ifndef TIMEOUT
 # define TIMEOUT        -1
-#endif
-
-#ifndef MAX_CLIENTS
-# define MAX_CLIENTS    64
 #endif
 
 #endif

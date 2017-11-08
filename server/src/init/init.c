@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 15:19:09 2017 alexandre Chamard-bois
-** Last update Tue Nov 07 00:05:50 2017 alexandre Chamard-bois
+** Last update Tue Nov 07 00:35:48 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
@@ -26,9 +26,9 @@ static const pars_info_t g_infos[] = {
 static int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t set_default)
 {
 	size_t 		buff_size = FILENAME_MAX;
+	size_t 		readed = buff_size + 1;
 	int 		valid = 0;
 	char 		*buffer;
-	size_t 		readed = buff_size + 1;
 
 	if (!(buffer = malloc((buff_size + 1) * sizeof(char)))) {
 		perror(NULL);

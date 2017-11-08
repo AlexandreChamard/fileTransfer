@@ -11,15 +11,14 @@
 #ifndef SERVER_MACRO_H_
 # define SERVER_MACRO_H_
 
-#ifndef EXIT_S
-# define EXIT_S         0
-#endif
+# ifndef EXIT_S
+#  define EXIT_S         0
+# endif
 
-#ifndef EXIT_F
-# define EXIT_F         42
-#endif
+# ifndef EXIT_F
+#  define EXIT_F         42
+# endif
 
-// Standard error number
 #ifndef STD_ERR
 # define STD_ERR        -1
 #endif
@@ -61,5 +60,13 @@
 #ifndef MAX_CLIENTS
 # define MAX_CLIENTS    64
 #endif
+
+# ifndef FILENAME_MAX
+#  define FILENAME_MAX	256
+# endif
+
+# ifndef PATH_MAX
+#  define PATH_MAX	4096
+# endif
 
 #endif

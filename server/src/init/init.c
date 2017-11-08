@@ -13,41 +13,48 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "init.h"
 #include "config.h"
 
-int get_info(char *info, char *name_info)
+static const pars_info_t g_infos[] = {
+	{"Home (default: pwd):", valid_home, set_default_home},
+	{"references (default: Home/references):", valid_references, set_default_references},
+	{"data (default: Home/data):", valid_data, set_default_data},
+	{"Size (default: 1024Ko):", valid_size, set_default_size},
+};
+
+static int get_info(void *data, char *prompt, func_valid_t is_valid, func_default_val_t set_default)
 {
-	size_t 		buff_size = 128;
+	size_t 		buff_size = FILENAME_MAX;
+	size_t 		readed = buff_size + 1;
 	int 		valid = 0;
 	char 		*buffer;
-        size_t 		readed = buff_size + 1;
 
-	if (!(buffer = (char*) malloc((buff_size + 1) * sizeof(char)))) {
+	if (!(buffer = malloc((buff_size + 1) * sizeof(char)))) {
+		perror(NULL);
 		exit(1);
 	}
 	while (!valid) {
 		memset(buffer, 0, readed);
 		valid = 1;
-		printf("%s ", name_info);
+		printf("%s ", prompt);
 		readed = getline(&buffer, &buff_size, stdin);
-		if (readed > 128) {
-			printf("There is a maximum of 128 characters.\n");
+		if (is_valid(data, buffer, readed)) {
 			valid = 0;
 		}
 	}
-	strncpy(info, buffer, readed - 1);
+	if (*buffer == '\n') {
+		set_default(data);
+	}
 	free(buffer);
 	return (0);
 }
 
 int init_server(server_config_t *config)
 {
-	// char buff[128] = "";
-
-	get_info(config->home, "Home (default: pwd):");
-	get_info(config->references, "references (default: Home/references):");
-	get_info(config->data, "data (default: Home/data):");
-	// write(STDOUT_FILENO , "max_size (default: 1024Ko):", 27);
-	// read(STDIN_FILENO, buff, 127);
+	get_info(config->home, g_infos[HOME].prompt, g_infos[HOME].valid, g_infos[HOME].def_val);
+	get_info(config->references, g_infos[REF].prompt, g_infos[REF].valid, g_infos[REF].def_val);
+	get_info(config->data, g_infos[DATA].prompt, g_infos[DATA].valid, g_infos[DATA].def_val);
+	get_info(&config->max_space, g_infos[SIZE].prompt, g_infos[SIZE].valid, g_infos[SIZE].def_val);
 	return (0);
 }

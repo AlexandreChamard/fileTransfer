@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 17:21:12 2017 alexandre Chamard-bois
-** Last update Wed Nov 01 19:24:52 2017 alexandre Chamard-bois
+** Last update Sat Nov 04 17:28:23 2017 Guilhem
 */
 
 #ifndef SERVER_RESEAU_H_
@@ -16,18 +16,23 @@
 
 #include "macro.h"
 
+/* Declarations of structures */
+
 typedef struct                  s_reseau_info {
         struct sockaddr_in      addr;
-        socklen_t               addrlen;
+        int                     port;
         int                     fd;
-        int                     sockfd;
-        int                     msg_len;
-        char                    msg_buff[BUFF_SIZE];
 }                               reseau_info_t;
 
 /* Declarations of functions */
 
+        /* Server specific */
+
 void    launch_server(reseau_info_t *info);
 void    close_server(reseau_info_t *info);
+
+        /* Requests specific */
+
+void    handle_request(reseau_info_t *info, char *buff);
 
 #endif

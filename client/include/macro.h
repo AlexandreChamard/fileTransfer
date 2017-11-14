@@ -5,7 +5,7 @@
 ** Login   <guilhem@epitech.net>
 **
 ** Started on  Fri Nov 03 13:44:55 2017 Guilhem
-** Last update Fri Nov 03 14:22:12 2017 Guilhem
+** Last update Tue Nov 14 22:45:11 2017 alexandre Chamard-bois
 */
 
 
@@ -32,6 +32,8 @@
 #ifndef FALSE
 # define FALSE          0
 #endif
+
+# define ISBLANK(c) (c == ' ' || c == '\t' || c == '\n' ? TRUE : FALSE)
 
 #ifndef HANDLE
 # define HANDLE(...)    perror(NULL), ##__VA_ARGS__, exit(EXIT_F)

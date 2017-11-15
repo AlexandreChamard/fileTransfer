@@ -5,12 +5,11 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:18:28 2017 alexandre Chamard-bois
-** Last update Tue Nov 14 23:38:47 2017 alexandre Chamard-bois
+** Last update Wed Nov 15 23:39:06 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "command.h"
 #include "shell.h"
 #include "macro.h"
@@ -18,6 +17,8 @@
 static const tab_commands_t g_commands[] = {
 	{"exit", cmd_exit},
 	{"debug", cmd_debug},
+	{"!ls", cmd_shell_ls},
+	{"!cd", cmd_shell_cd},
 	{NULL, NULL}
 };
 

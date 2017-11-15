@@ -5,11 +5,10 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:47:15 2017 alexandre Chamard-bois
-** Last update Tue Nov 14 23:37:13 2017 alexandre Chamard-bois
+** Last update Wed Nov 15 23:41:06 2017 alexandre Chamard-bois
 */
 
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include "macro.h"
 

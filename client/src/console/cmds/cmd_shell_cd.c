@@ -5,16 +5,23 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:28:37 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:41:54 2017 alexandre Chamard-bois
+** Last update Wed Nov 15 23:41:39 2017 alexandre Chamard-bois
 */
 
+#include <unistd.h>
 #include <stdio.h>
 
-int cmd_debug(int ac, char **av)
+int cmd_shell_cd(int ac, char **av)
 {
-	printf("nb args: %d\n", ac);
-	for (int i = 0; av[i]; i++) {
-		printf("[%s]\n", av[i]);
+	int ret;
+
+	if (ac == 1) {
+		ret = chdir("/");
+	} else {
+		ret = chdir(av[1]);
 	}
-	return (0);
+	if (ret) {
+		perror(NULL);
+	}
+	return (ret);
 }

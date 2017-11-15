@@ -5,40 +5,44 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 19:27:40 2017 alexandre Chamard-bois
-** Last update Tue Nov 14 23:40:14 2017 alexandre Chamard-bois
+** Last update Wed Nov 15 23:54:07 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
+#include <unistd.h>
 #include "shell.h"
 #include "macro.h"
 
 int end = FALSE;
 
-int loop()
+void print_pwd()
+{
+	char pwd[1024];
+
+	getcwd(pwd, 1024);
+	printf("\e[1;34m%s\e[0;39m$ ", pwd);
+	fflush(stdout);
+}
+
+int shell()
 {
 	char *line = NULL;
 	size_t size = 0;
+	int ret;
 
 	while (!end) {
-		if (getline(&line, &size, stdin) <= 0) {
+		print_pwd();
+		if ((ret = getline(&line, &size, stdin)) <= 0) {
+			perror(NULL);
 			free(line);
 			return (1);
 		}
-		pars_cmd(trim(line));
+		trim(line);
+		if (*line != '\n') {
+			pars_cmd(line);
+		}
 	}
 	free(line);
 	return (0);
-}
-
-int main(int ac, char **av)
-{
-	int ret;
-	(void)ac;
-	(void)av;
-
-	ret = loop();
-	return (ret);
 }

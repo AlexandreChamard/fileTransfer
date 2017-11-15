@@ -13,12 +13,18 @@ CC		=	gcc
 CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	-I./include
 
-SRC		=	src/console/shell/main.c		\
+SRC		=	src/main.c
+
+SRC		+=	src/reseau/launch.c			\
+
+SRC		+=	src/console/shell/shell.c		\
 			src/console/shell/pars_cmd.c		\
 			src/console/shell/args_cmd.c		\
 
 SRC		+=	src/console/cmds/cmd_exit.c		\
 			src/console/cmds/cmd_debug.c		\
+			src/console/cmds/cmd_shell_ls.c		\
+			src/console/cmds/cmd_shell_cd.c		\
 
 SRC		+=	src/lib/trim.c				\
 			src/lib/cmp.c				\

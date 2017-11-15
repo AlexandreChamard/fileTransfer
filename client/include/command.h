@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:05:12 2017 alexandre Chamard-bois
-** Last update Tue Nov 14 23:08:13 2017 alexandre Chamard-bois
+** Last update Wed Nov 15 10:40:51 2017 alexandre Chamard-bois
 */
 
 #ifndef COMMAND_H_
@@ -19,5 +19,7 @@ typedef struct	tab_commands {
 int cmd_cd(int ac, char **av);
 int cmd_exit(int ac, char **av);
 int cmd_debug(int ac, char **av);
+int cmd_shell_ls(int ac, char **av);
+int cmd_shell_cd(int ac, char **av);
 
 #endif

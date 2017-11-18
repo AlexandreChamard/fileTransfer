@@ -10,7 +10,7 @@
 
 CC		=	gcc
 
-CFLAGS		=	-W -Wall -Wextra -Werror -g
+CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	-I./include
 
 SRC		=	src/main.c

@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Wed Nov 01 14:51:21 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:44:47 2017 alexandre Chamard-bois
+** Last update Thu Nov 16 11:06:01 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
@@ -29,9 +29,11 @@ void reseau()
 int 			main(int ac, char **av)
 {
 	int ret;
-	(void)ac;
-	(void)av;
 
-	ret = shell();
+	if (ac > 1) {
+		ret = exec_args(ac, av);
+	} else {
+		ret = shell();
+	}
 	return (ret);
 }

@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:47:15 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:41:06 2017 alexandre Chamard-bois
+** Last update Thu Nov 16 19:26:44 2017 alexandre Chamard-bois
 */
 
 #include <string.h>
@@ -54,9 +54,9 @@ char **get_args_cmd(char *line, int *nb_args)
 
 	*nb_args = nb_word(line);
 	size_ptrs = sizeof(char *) * (*nb_args + 1);
-	ptr = malloc(size_ptrs + len);
+	ptr = malloc(size_ptrs + len + 1);
 	if (ptr) {
-		memset(ptr, 0, size_ptrs + len);
+		memset(ptr, 0, size_ptrs + len + 1);
 		memcpy(ptr + size_ptrs, line, len);
 		return (create_tab(ptr, ptr + size_ptrs, *nb_args));
 	}

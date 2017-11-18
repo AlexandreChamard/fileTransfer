@@ -5,12 +5,13 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 19:27:40 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:54:07 2017 alexandre Chamard-bois
+** Last update Thu Nov 16 19:27:14 2017 alexandre Chamard-bois
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include "shell.h"
 #include "macro.h"
 
@@ -43,6 +44,29 @@ int shell()
 			pars_cmd(line);
 		}
 	}
+	free(line);
+	return (0);
+}
+
+int exec_args(int ac, char **av)
+{
+	size_t avancement = 0;
+	size_t len = 0;
+	char *line;
+
+	for (int i = 1; i < ac; i++) {
+		len += strlen(av[i]);
+	}
+	if (!(line = malloc(sizeof(char) * (len + ac)))) {
+		return (1);
+	}
+	for (int i = 1; i < ac; i++) {
+		strcpy(line + avancement, av[i]);
+		avancement += strlen(av[i]) + 1;
+		line[avancement - 1] = ' ';
+	}
+	line[avancement - 1] = 0;
+	pars_cmd(line);
 	free(line);
 	return (0);
 }

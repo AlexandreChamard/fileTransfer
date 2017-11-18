@@ -5,13 +5,15 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:06:53 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:44:39 2017 alexandre Chamard-bois
+** Last update Thu Nov 16 10:57:35 2017 alexandre Chamard-bois
 */
 
 #ifndef SHELL_H_
 # define SHELL_H_
 
 extern int end;
+
+int	exec_args(int ac, char **av);
 
 int 	shell();
 int	pars_cmd(char *str);

@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Tue Nov 14 22:28:37 2017 alexandre Chamard-bois
-** Last update Wed Nov 15 23:41:26 2017 alexandre Chamard-bois
+** Last update Sat Nov 18 14:03:45 2017 alexandre Chamard-bois
 */
 
 #include <sys/wait.h>
@@ -14,18 +14,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void exec_child(int fds[2], int ac, char **av)
+static inline void exec_child(int fds[2], char **av)
 {
-	(void)ac;
 	*av = strdup("/bin/ls");
 	close(fds[0]);
 	dup2(fds[1], STDOUT_FILENO);
 	execve(*av, av, NULL);
-	perror(NULL);
+	perror(*av);
 	exit(1);
 }
 
-int exec_father(int fds[2], pid_t pid)
+static inline int exec_father(int fds[2], pid_t pid)
 {
 	int save_stdin = dup(STDIN_FILENO);
 	char *buff = NULL;
@@ -50,11 +49,12 @@ int cmd_shell_ls(int ac, char **av)
 	int ret = -1;
 	pid_t pid;
 
+	(void)ac;
 	if (pipe(fds) == -1 || (pid = fork()) == -1) {
 		perror(NULL);
 		return (1);
 	} else if (!pid) {
-		exec_child(fds, ac, av);
+		exec_child(fds, av);
 	} else {
 		ret = exec_father(fds, pid);
 	}

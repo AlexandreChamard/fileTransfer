@@ -68,3 +68,8 @@ exemple de hierarchie;
 type requete:
 
 int de numerotation de progression.
+
+
+packet info:
+type commandes
+nb packets total
